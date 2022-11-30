@@ -46,7 +46,7 @@ hr{
     min-height: 300px;
 }
 
-.imagem{
+.imagem, #imgpokemon{
     text-align: center;
 }
 
@@ -70,4 +70,36 @@ hr{
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-transform: uppercase;
     border-radius: 5px;
+    margin: 5px;
+}
+
+.group-form input[type=submit]{
+    background: #1B356E;
+    font-weight: 900;
+    font-size: 1rem;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+}
+
+#imgpokemon img{
+    width: 90px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    margin: 3px;
+    margin-bottom:10px;
+}
+
+#content{
+    font-family: monospace;
+    padding: 10px;
+    background: #ffcc01;
+    border: 1px solid #C8a102;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
 }
