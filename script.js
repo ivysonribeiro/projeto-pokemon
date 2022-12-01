@@ -25,6 +25,17 @@ let imagem = document.getElementById('imgpokemon')
 
 //resposta em HTML
 let html = ''
-alert(urlForm)
 
-})
+fetch(urlForm)
+  .then(resposta => resposta.json())
+  .then(function(data){
+    console.log(data)
+    html + 'nome:' + data.name + '<br>'
+    html = html + 'type:' + data.types[0].type.name
+    resposta.innerHTML = html
+  })
+  .catch(function(err){
+    console.log(err)
+  })
+
+});
