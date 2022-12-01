@@ -6,7 +6,7 @@ formulário.addEventListener('submit', function(e){
 e.preventDefault()
 
 //url da pesquisa
-let urlForm = " https://pokeapi.co/api/v2/pokemon/"
+let urlForm = " https://pokeapi.co/api/v2/pokemon/";
 
 //valor do input name
 let nome = document.getElementById("name")
@@ -30,12 +30,24 @@ fetch(urlForm)
   .then(resposta => resposta.json())
   .then(function(data){
     console.log(data)
-    html + 'nome:' + data.name + '<br>'
-    html = html + 'type:' + data.types[0].type.name
+    html + 'nome:' + maiuscula(data.name) + '<br>'
+    html = html + 'type:' + maiuscula(data.types[0].type.name)
     resposta.innerHTML = html
+
+    imagem.innerHTML = "<img src= '"+ data.sprites.front_default +"'><img src= '"+ data.sprites.back_default +"'>"
   })
   .catch(function(err){
-    console.log(err)
+    if(err == 'SyntaxError: Unexpected token N in JSON at position 0'){
+        html = 'Pokémon não encontrado!😒'
+    } else{
+        html = 'Erro:' + err
+    }
+    resposta.innerHTML = html
   })
 
 });
+
+function maiuscula(val){
+    return val[0].toUpperCase()
+    + val.substr(1)
+}
