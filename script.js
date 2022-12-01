@@ -30,7 +30,7 @@ fetch(urlForm)
   .then(resposta => resposta.json())
   .then(function(data){
     console.log(data)
-    html + 'nome:' + maiuscula(data.name) + '<br>'
+    html = 'nome:' + maiuscula(data.forms[0].name) + '<br>'
     html = html + 'type:' + maiuscula(data.types[0].type.name)
     resposta.innerHTML = html
 
