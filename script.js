@@ -36,13 +36,13 @@ fetch(urlForm)
 
     imagem.innerHTML = "<img src= '"+ data.sprites.front_default +"'><img src= '"+ data.sprites.back_default +"'>"
   })
-  .catch(function(err)
-   / if(err == 'SyntaxError: Unexpected token N in JSON at position 0'){
+  .catch(function(err){
+   if(err == 'SyntaxError: Unexpected token N in JSON at position 0'){
         html = 'Pokémon não encontrado!😒'
     } else{
-        html = 'Erro'
+        html = 'Pokémon não encontrado!😒'
     }
-    resposta.innerHTML = html */
+    resposta.innerHTML = html 
   })
 
 });
